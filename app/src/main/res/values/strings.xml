@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AppCafeCol</string>
+    <string name="no_count">¿No tienes cuenta? Registrate</string>
+    <string name="ingresa">Ingresa</string>
+    <string name="nombre">Nombre</string>
+    <string name="email">Correo</string>
+    <string name="registro">Registrate</string>
+    <string name="password">Contraseña</string>
+    <string name="forgotPassword">¿Olvidaste tu contraseña?</string>
+    <string name="login">Iniciar Sesion</string>
+    <string name="resetPassword">Enviar contraseña</string>
+    <string name="acept">He leido y acepto los</string>
+    <string name="terms">Terminos y condiciones de uso.</string>
+    <string name="empty_email">Introduce un email porfavor</string>
+    <string name="invalid_email">Hmmm parece que el email esta mal escrito</string>
+</resources>

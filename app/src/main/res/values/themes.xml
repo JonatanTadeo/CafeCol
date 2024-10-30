@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AppCafeCol" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Status bar color -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/cafeoscuro</item>
+        <item name='windowActionBar'>false</item>
+        <item name='windowNoTitle'>true</item>
+
+    </style>
+
+    <style name="Theme.AppCafeCol" parent="Base.Theme.AppCafeCol" />
+
+
+</resources>
