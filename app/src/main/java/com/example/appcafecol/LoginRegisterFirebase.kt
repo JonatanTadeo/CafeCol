@@ -14,13 +14,7 @@ class LoginRegisterFirebase : AppCompatActivity() {
 
 
     }
-    fun register(view: View){
-        loginregister()
-    }
-    private fun loginregister(){
-        val intent = Intent(this, Register::class.java)
-        startActivity(intent)
-    }
+
     fun login(view: View){
         loginlogin()
     }
