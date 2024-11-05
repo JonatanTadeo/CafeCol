@@ -39,6 +39,22 @@ class CategoriasActivity : AppCompatActivity() {
                 }
                 true
             }
+            R.id.itemFragment4 -> {
+                supportFragmentManager.commit {
+                    replace<CuartoFragment>(R.id.framecontainer)
+                    setReorderingAllowed(true)
+                    addToBackStack(null)
+                }
+                true
+            }
+            R.id.itemFragment5 -> {
+                supportFragmentManager.commit {
+                    replace<QuintoFragment>(R.id.framecontainer)
+                    setReorderingAllowed(true)
+                    addToBackStack(null)
+                }
+                true
+            }
             else -> false
         }
     }

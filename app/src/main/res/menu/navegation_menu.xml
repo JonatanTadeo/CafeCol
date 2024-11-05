@@ -4,21 +4,31 @@
     <item
         android:id="@+id/itemFragment1"
         android:icon="@drawable/ic_fragment"
-        android:title="Fragment 1"
+        android:title="Perfiles"
         />
 
 
     <item
         android:id="@+id/itemFragment2"
-        android:icon="@drawable/ic_fragment"
-        android:title="Fragment 2"
+        android:icon="@drawable/ic_finca"
+        android:title="Fincas"
         />
 
 
     <item
         android:id="@+id/itemFragment3"
-        android:icon="@drawable/ic_fragment"
-        android:title="Fragment 3"
+        android:icon="@drawable/ic_crearper"
+        android:title="Crear Perfil"
+        />
+    <item
+        android:id="@+id/itemFragment4"
+        android:icon="@drawable/ic_crearfin"
+        android:title="Crear Finca"
+        />
+    <item
+        android:id="@+id/itemFragment5"
+        android:icon="@drawable/ic_config"
+        android:title="Configuracion"
         />
 
 </menu>
