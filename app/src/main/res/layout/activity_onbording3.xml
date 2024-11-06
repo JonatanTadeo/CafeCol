@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:gravity="center"
-        android:text="¡Planifica un cultivo sostenible y próspero!"
+        android:text="¡Empieza tu nueva aventura laboral hoy mismo!"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,17 +40,18 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
         android:gravity="center"
-        android:text="Tu café merece lo mejor. Aprende cómo cuidar tu tierra, ahorrar recursos y proteger el medio ambiente mientras optimizas cada etapa de la producción."
+        android:text="Encuentra trabajos en fincas de café, postúlate fácilmente y mantente informado sobre nuevas oportunidades laborales en el sector."
         android:textColor="#000000"
         android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

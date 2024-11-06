@@ -1,6 +1,7 @@
 package com.example.appcafecol
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,32 +66,29 @@ class FincaDetailsDialogFragment : DialogFragment() {
         val messageToApplicant = "Te has postulado exitosamente a la oferta de ${finca.finca}."
 
         // Agregar notificación para el dueño de la finca
-        addNotification(ownerEmail, messageToOwner)
+        addNotification(ownerEmail, messageToOwner, applicantEmail)
 
-        // Agregar notificación para el solicitante
-        addNotification(applicantEmail, messageToApplicant)
+        // Agregar notificación para el solicitante (opcional)
+        // addNotification(applicantEmail, messageToApplicant, applicantEmail)
 
         Toast.makeText(context, "Te has postulado correctamente.", Toast.LENGTH_SHORT).show()
     }
 
-    private fun addNotification(userEmail: String, message: String) {
-        val notification = Notification(message = message, timestamp = System.currentTimeMillis())
+    private fun addNotification(userEmail: String, message: String, applicantEmail: String) {
+        val notification = Notification(message = message, timestamp = System.currentTimeMillis(), userEmail = applicantEmail)
         db.collection("notifications")
-            .add(mapOf("userEmail" to userEmail, "message" to notification.message, "timestamp" to notification.timestamp))
+            .add(mapOf(
+                "userEmail" to userEmail,
+                "message" to notification.message,
+                "timestamp" to notification.timestamp,
+                "applicantEmail" to notification.userEmail
+            ))
             .addOnSuccessListener {
                 // Notificación agregada correctamente
+                Log.d("Notification", "Notificación guardada: ${notification.message}, ${notification.userEmail}")
             }
             .addOnFailureListener { e ->
                 e.printStackTrace()
             }
     }
 }
-
-
-
-
-
-
-
-
-

@@ -2,12 +2,12 @@ package com.example.appcafecol
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.appcafecol.databinding.FragmentQuintoBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -36,7 +36,9 @@ class QuintoFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         loadNotifications { notifications ->
-            notificationAdapter = NotificationAdapter(notifications)
+            notificationAdapter = NotificationAdapter(notifications) { notification ->
+                showNotificationDetails(notification)
+            }
             recyclerView.adapter = notificationAdapter
         }
 
@@ -56,7 +58,9 @@ class QuintoFragment : Fragment() {
                 .get()
                 .addOnSuccessListener { result ->
                     val notifications = result.map { document ->
-                        document.toObject(Notification::class.java)
+                        val notification = document.toObject(Notification::class.java)
+                        Log.d("Notification", "Notificación recuperada: ${notification.message}, ${notification.userEmail}")
+                        notification
                     }
                     callback(notifications)
                 }
@@ -65,7 +69,13 @@ class QuintoFragment : Fragment() {
                 }
         }
     }
+
+    private fun showNotificationDetails(notification: Notification) {
+        val fragment = NotificationDetailsDialogFragment.newInstance(notification)
+        fragment.show(parentFragmentManager, "NotificationDetailsDialog")
+    }
 }
+
 
 
 

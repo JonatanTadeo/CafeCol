@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:gravity="center"
-        android:text="¡Conoce los precios del café al instante!"
+        android:text="¡Encuentra las mejores oportunidades de trabajo en el sector cafetalero!"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Mantente siempre al tanto de las tendencias del mercado. Consulta los precios en tiempo real y toma decisiones inteligentes para que tu cosecha sea la más rentable."
+        android:text="Busca trabajos en fincas de café, postúlate fácilmente y mantente informado sobre nuevas ofertas en tu área."
         android:textColor="#000000"
         android:textStyle="bold"
         android:textSize="24sp"
@@ -51,5 +51,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.862" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
