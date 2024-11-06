@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/white"> <!-- Color del ripple, puede ser semitransparente -->
+
+    <!-- Estado normal del botón (cuando está habilitado) -->
+    <item android:drawable="@drawable/bt_background_darkblue"/>
+
+
+</ripple>

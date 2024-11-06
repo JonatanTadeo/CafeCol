@@ -5,9 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="8dp"
     android:background="@color/white"
+    android:foreground="@color/white"
+    app:cardBackgroundColor="@color/white"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?selectableItemBackground"
     app:cardCornerRadius="10dp"
     app:contentPadding="10dp">
 
@@ -15,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@drawable/tv_background2">
 
         <TextView
             android:id="@+id/notificationMessageTextView"
@@ -29,7 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#777"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:background="@drawable/tv_background2"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
 

@@ -16,35 +16,16 @@
             android:name=".CategoriasActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoriaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.login.CategoriasActivity"
-            android:exported="false" />
-        <activity
             android:name=".InicioActivity"
             android:exported="false" />
         <activity
             android:name=".TermsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.Menu"
-            android:exported="false" />
-        <activity
-            android:name=".ui.login.MenuActivity"
-            android:exported="false"
-            android:label="@string/title_activity_menu" />
-        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginRegisterFirebase"
-            android:exported="false" />
-        <activity
-            android:name=".Categorias1"
             android:exported="false" />
         <activity
             android:name=".Onbording3"

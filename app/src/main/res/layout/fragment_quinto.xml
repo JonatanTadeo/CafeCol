@@ -23,15 +23,17 @@
             android:layout_marginTop="16dp"
             app:srcCompat="@drawable/cafecol" />
 
+        <!-- Título de Notificaciones -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
+            android:layout_gravity="center_horizontal"
             android:background="@color/white"
+            app:cardBackgroundColor="@color/white"
+            android:foreground="@color/white"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?selectableItemBackground"
-            app:cardCornerRadius="10dp"
             app:contentPadding="10dp">
 
             <TextView
@@ -39,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/tv_background"
                 android:drawablePadding="10dp"
                 android:text="@string/CerrarSesionAdmin"
                 android:textColor="@color/black"
@@ -47,7 +50,6 @@
                 app:drawableStartCompat="@drawable/ic_cerrar_sesion" />
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Título de Notificaciones -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
