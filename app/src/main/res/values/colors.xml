@@ -8,6 +8,7 @@
     <color name="rojofuerte">#D20103</color>
     <color name="cafe">#9A743C</color>
     <color name="cafeoscuro">#3d1702</color>
+    <color name="dialog_background_color">#A63434</color>
 
 
 </resources>

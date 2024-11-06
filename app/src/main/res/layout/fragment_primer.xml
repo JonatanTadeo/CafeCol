@@ -1,136 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#9A743C"
     tools:context=".PrimerFragment">
 
-    <ScrollView
+    <!-- ScrollView para hacer todo desplazable -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="80dp">
 
+        <!-- Contenedor para la imagen y el RecyclerView -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Crear Perfil"
-                android:textSize="24sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal"
-                android:paddingBottom="16dp" />
-
-            <EditText
-                android:id="@+id/name_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nombre"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"
-                android:background="#30ffffff"
-                android:textColorHint="@color/black"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
-
-            <EditText
-                android:id="@+id/years_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Edad"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:background="#30ffffff"
-                android:textColorHint="@color/black"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
-
-            <EditText
-                android:id="@+id/email_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Correo Electrónico"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/black"
-                android:background="#30ffffff"
-                android:textColorHint="@color/black"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
-
-            <EditText
-                android:id="@+id/number_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Numero Celular"
-                android:inputType="text|phone"
-                android:textColor="@color/black"
-                android:background="#30ffffff"
-                android:textColorHint="@color/black"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
-
-            <EditText
-                android:id="@+id/location_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Ubicacion y disponibilidad para trasladarse"
-                android:inputType="textMultiLine"
-                android:textColor="@color/black"
-                android:background="#30ffffff"
-                android:textColorHint="@color/black"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
-
-            <EditText
-                android:id="@+id/experience_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Experiencia Laboral Descripción de las labores realizadas en fincas cafeteras, como recolección, selección, lavado, secado, y cualquier otra actividad relacionada con el café."
-                android:inputType="textMultiLine"
-                android:textColor="@color/black"
-                android:background="#30ffffff"
-                android:textColorHint="@color/black"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
-
-            <EditText
-                android:id="@+id/otherexperience_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Otras experiencias agrícolas relevantes (mantenimiento de cultivos, cuidado de animales, jardinería)."
-                android:inputType="textMultiLine"
-                android:textColor="@color/black"
-                android:background="#30ffffff"
-                android:textColorHint="@color/black"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
-
-            <Button
-                android:id="@+id/save_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Guardar Perfil"
+            <!-- Imagen central -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="72dp"
+                android:layout_height="71dp"
+                android:layout_gravity="center_horizontal|top"
                 android:layout_marginTop="16dp"
-                />
+                app:srcCompat="@drawable/cafecol" />
+
+            <!-- RecyclerView con margen superior para no cubrir la imagen -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"/>
+
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
 </FrameLayout>
+
+

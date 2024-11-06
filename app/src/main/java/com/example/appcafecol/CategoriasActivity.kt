@@ -19,7 +19,7 @@ class CategoriasActivity : AppCompatActivity() {
                 supportFragmentManager.commit {
                     replace<PrimerFragment>(R.id.framecontainer)
                     setReorderingAllowed(true)
-                    addToBackStack(null) // Se usa null para no nombrar la pila
+                    addToBackStack(null)
                 }
                 true
             }
@@ -32,16 +32,18 @@ class CategoriasActivity : AppCompatActivity() {
                 true
             }
             R.id.itemFragment3 -> {
+                val email = intent.getStringExtra("email")
                 supportFragmentManager.commit {
-                    replace<TercerFragment>(R.id.framecontainer)
+                    replace(R.id.framecontainer, TercerFragment.newInstance(email!!))
                     setReorderingAllowed(true)
                     addToBackStack(null)
                 }
                 true
             }
             R.id.itemFragment4 -> {
+                val email = intent.getStringExtra("email")
                 supportFragmentManager.commit {
-                    replace<CuartoFragment>(R.id.framecontainer)
+                    replace(R.id.framecontainer, CuartoFragment.newInstance(email!!))
                     setReorderingAllowed(true)
                     addToBackStack(null)
                 }
@@ -60,25 +62,20 @@ class CategoriasActivity : AppCompatActivity() {
     }
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_categorias)
 
+        val email = intent.getStringExtra("email")
 
         navegation = findViewById(R.id.navMenu)
         navegation.setOnNavigationItemSelectedListener(monNavmenu) // Cambiado a OnNavigationItemSelectedListener
-
-
 
         supportFragmentManager.commit {
             replace<PrimerFragment>(R.id.framecontainer)
             setReorderingAllowed(true)
         }
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -86,4 +83,5 @@ class CategoriasActivity : AppCompatActivity() {
             insets
         }
     }
+
 }

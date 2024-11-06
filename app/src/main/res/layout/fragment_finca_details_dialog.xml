@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@color/dialog_background_color"
+    tools:context=".FincaDetailsDialogFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Nombre -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/fincaNombreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <!-- Encargo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Encargo:"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/cargoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <!-- Disponibilidad -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disponibilidad:"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/disponibilidadTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <!-- Ubicación -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubicación:"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/ubicacionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <!-- Salario -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salario:"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/salarioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <!-- Trabajo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trabajo:"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/trabajoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+        <!-- Experiencia -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Experiencia:"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/experienciaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</FrameLayout>
+

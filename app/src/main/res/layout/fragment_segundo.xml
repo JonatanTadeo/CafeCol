@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cafeoscuro"
+    android:background="#9A743C"
     tools:context=".SegundoFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:text="fragment  2" />
+    <!-- ScrollView para hacer todo desplazable -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="80dp">
+
+        <!-- Contenedor para la imagen y el RecyclerView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Imagen central -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="72dp"
+                android:layout_height="71dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="16dp"
+                app:srcCompat="@drawable/cafecol" />
+
+            <!-- RecyclerView con margen superior para no cubrir la imagen -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewFinca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 </FrameLayout>
+
+

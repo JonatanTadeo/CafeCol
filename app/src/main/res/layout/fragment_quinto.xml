@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/cafeclaro"
     tools:context=".QuintoFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:text="fragment  5" />
-</FrameLayout>
+        android:layout_margin="22dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp">
+        <TextView
+            android:id="@+id/CerrarSesionAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="10dp"
+
+            android:text="@string/CerrarSesionAdmin"
+            android:textColor="@color/cafeoscuro"
+            android:textSize="25sp"
+            app:drawableEndCompat="@drawable/ic_siguiente"
+            app:drawableStartCompat="@drawable/ic_cerrar_sesion" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+</ScrollView>

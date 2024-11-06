@@ -42,5 +42,6 @@
         amet purus pulvinar sagittis. Cras purus felis, hendrerit et ornare ut, molestie id orci. Integer dictum consequat leo, id
         pretium urna tempus et. Donec nibh ante, laoreet id lorem vitae, vestibulum sollicitudin lorem. </string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="CerrarSesionAdmin">Cerrar Sesion</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
