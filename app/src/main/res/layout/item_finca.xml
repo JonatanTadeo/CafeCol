@@ -30,46 +30,12 @@
             android:textColor="#000" />
 
         <TextView
-            android:id="@+id/disponibilidadTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#000" />
-
-        <TextView
             android:id="@+id/ubicacionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textColor="#000" />
 
-        <TextView
-            android:id="@+id/salarioTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/trabajoTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/experienciaTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#000" />
-
-        <TextView
-            android:id="@+id/tiempoTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="#888" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

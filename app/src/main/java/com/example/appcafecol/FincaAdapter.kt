@@ -10,26 +10,14 @@ class FincaAdapter(private val fincas: List<Finca>, private val clickListener: (
     RecyclerView.Adapter<FincaAdapter.FincaViewHolder>() {
 
     class FincaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val fincaNombreTextView: TextView = itemView.findViewById(R.id.fincaNombreTextView)
-        val chargeTextView: TextView = itemView.findViewById(R.id.cargoTextView)
-        val availabilityTextView: TextView = itemView.findViewById(R.id.disponibilidadTextView)
-        val locationTextView: TextView = itemView.findViewById(R.id.ubicacionTextView)
-        val salaryTextView: TextView = itemView.findViewById(R.id.salarioTextView)
-        val workTextView: TextView = itemView.findViewById(R.id.trabajoTextView)
-        val experienceTextView: TextView = itemView.findViewById(R.id.experienciaTextView)
-        val tiempoTextView: TextView = itemView.findViewById(R.id.tiempoTextView)
+        val nombreTextView: TextView = itemView.findViewById(R.id.fincaNombreTextView)
+        val cargoTextView: TextView = itemView.findViewById(R.id.cargoTextView)
+        val ubicacionTextView: TextView = itemView.findViewById(R.id.ubicacionTextView)
 
         fun bind(finca: Finca, clickListener: (Finca) -> Unit) {
-            fincaNombreTextView.text = finca.finca
-            chargeTextView.text = finca.charge
-            availabilityTextView.text = finca.availability
-            locationTextView.text = finca.location
-            salaryTextView.text = finca.salary
-            workTextView.text = finca.work
-            experienceTextView.text = finca.experience
-
-            val dateCreated = finca.dateCreated.toDate().time
-            tiempoTextView.text = "Creado hace: ${Utils().getTimeAgo(dateCreated)}"
+            nombreTextView.text = finca.finca
+            cargoTextView.text = finca.charge
+            ubicacionTextView.text = finca.location
 
             itemView.setOnClickListener { clickListener(finca) }
         }
@@ -48,6 +36,9 @@ class FincaAdapter(private val fincas: List<Finca>, private val clickListener: (
         return fincas.size
     }
 }
+
+
+
 
 
 

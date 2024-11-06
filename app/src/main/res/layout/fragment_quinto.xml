@@ -1,35 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/cafeclaro"
+    android:fillViewport="true"
+    android:paddingBottom="80dp"
+    android:background="#9A743C"
     tools:context=".QuintoFragment">
 
-
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="22dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?selectableItemBackground"
-        app:cardCornerRadius="10dp"
-        app:contentPadding="10dp">
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="72dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/cafecol" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="10dp">
+
+            <TextView
+                android:id="@+id/CerrarSesionAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:text="@string/CerrarSesionAdmin"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:drawableEndCompat="@drawable/ic_siguiente"
+                app:drawableStartCompat="@drawable/ic_cerrar_sesion" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Título de Notificaciones -->
         <TextView
-            android:id="@+id/CerrarSesionAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawablePadding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Notificaciones"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:layout_marginTop="24dp"/>
 
-            android:text="@string/CerrarSesionAdmin"
-            android:textColor="@color/cafeoscuro"
-            android:textSize="25sp"
-            app:drawableEndCompat="@drawable/ic_siguiente"
-            app:drawableStartCompat="@drawable/ic_cerrar_sesion" />
+        <!-- RecyclerView para las notificaciones en tarjetas -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewNotifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            tools:listitem="@layout/item_notification" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
 
 
-    </com.google.android.material.card.MaterialCardView>
-</ScrollView>
+

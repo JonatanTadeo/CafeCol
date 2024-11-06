@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CuartoFragment : Fragment() {
@@ -25,6 +26,7 @@ class CuartoFragment : Fragment() {
 
     private var fincaName: String? = null
     private val db = FirebaseFirestore.getInstance() // Instancia de Firestore
+    private val currentUser = FirebaseAuth.getInstance().currentUser // Usuario actual
 
     companion object {
         @JvmStatic
@@ -105,7 +107,6 @@ class CuartoFragment : Fragment() {
             }
     }
 
-
     private fun saveFinca() {
         val finca = etFinca.text.toString()
         val charge = etCharge.text.toString()
@@ -114,6 +115,7 @@ class CuartoFragment : Fragment() {
         val salary = etSalary.text.toString()
         val work = etWork.text.toString()
         val experience = etExperience.text.toString()
+        val ownerEmail = currentUser?.email ?: "owner@example.com" // Añadimos el correo del dueño
         val dateCreated = Timestamp.now()
 
         val fincaData = hashMapOf(
@@ -124,10 +126,10 @@ class CuartoFragment : Fragment() {
             "salary" to salary,
             "work" to work,
             "experience" to experience,
+            "ownerEmail" to ownerEmail, // Añadimos esto
             "dateCreated" to dateCreated
         )
 
-        val db = FirebaseFirestore.getInstance()
         db.collection("farms").document(finca).set(fincaData)
             .addOnSuccessListener {
                 Toast.makeText(context, "Finca guardada correctamente.", Toast.LENGTH_SHORT).show()
@@ -154,7 +156,6 @@ class CuartoFragment : Fragment() {
             }
     }
 
-
     private fun updateFinca() {
         val finca = etFinca.text.toString()
         val charge = etCharge.text.toString()
@@ -163,6 +164,7 @@ class CuartoFragment : Fragment() {
         val salary = etSalary.text.toString()
         val work = etWork.text.toString()
         val experience = etExperience.text.toString()
+        val ownerEmail = currentUser?.email ?: "owner@example.com" // Añadimos el correo del dueño
 
         fincaName?.let {
             val fincaRef = db.collection("farms").document(it)
@@ -181,6 +183,7 @@ class CuartoFragment : Fragment() {
                             "salary" to salary,
                             "work" to work,
                             "experience" to experience,
+                            "ownerEmail" to ownerEmail, // Añadimos esto
                             "dateCreated" to dateCreated
                         )
 
@@ -198,8 +201,9 @@ class CuartoFragment : Fragment() {
                 }
         }
     }
-
 }
+
+
 
 
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
-    android:background="@color/dialog_background_color"
+    android:background="@android:color/white"
     tools:context=".FincaDetailsDialogFragment">
 
     <LinearLayout
@@ -28,11 +28,11 @@
             android:textColor="#000"
             android:textSize="16sp"/>
 
-        <!-- Encargo -->
+        <!-- Cargo -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encargo:"
+            android:text="Cargo:"
             android:textStyle="bold"
             android:textColor="#000"
             android:textSize="18sp"/>
@@ -118,6 +118,18 @@
             android:textColor="#000"
             android:textSize="16sp"/>
 
+        <!-- Botón para postularse -->
+        <Button
+            android:id="@+id/apply_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Postularme"/>
     </LinearLayout>
+
 </FrameLayout>
+
+
+
 

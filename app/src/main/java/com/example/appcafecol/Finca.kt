@@ -12,6 +12,7 @@ data class Finca(
     val salary: String = "",
     val work: String = "",
     val experience: String = "",
+    val ownerEmail: String = "", // Añadimos este campo
     val dateCreated: Timestamp = Timestamp.now()
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
@@ -22,6 +23,7 @@ data class Finca(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
+        parcel.readString() ?: "", // Añadimos esto para el campo ownerEmail
         parcel.readParcelable(Timestamp::class.java.classLoader) ?: Timestamp.now()
     )
 
@@ -33,6 +35,7 @@ data class Finca(
         parcel.writeString(salary)
         parcel.writeString(work)
         parcel.writeString(experience)
+        parcel.writeString(ownerEmail) // Añadimos esto para el campo ownerEmail
         parcel.writeParcelable(dateCreated, flags)
     }
 
@@ -50,6 +53,11 @@ data class Finca(
         }
     }
 }
+
+
+
+
+
 
 
 

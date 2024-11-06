@@ -4,12 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class FincaDetailsDialogFragment : DialogFragment() {
 
     private lateinit var finca: Finca
+    private val db = FirebaseFirestore.getInstance()
 
     companion object {
         private const val ARG_FINC = "finca"
@@ -44,9 +49,48 @@ class FincaDetailsDialogFragment : DialogFragment() {
         view.findViewById<TextView>(R.id.trabajoTextView).text = finca.work
         view.findViewById<TextView>(R.id.experienciaTextView).text = finca.experience
 
+        // Manejo del botón de postulación
+        view.findViewById<Button>(R.id.apply_button).setOnClickListener {
+            applyForFinca()
+        }
+
         return view
     }
+
+    private fun applyForFinca() {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val applicantEmail = currentUser?.email ?: "applicant@example.com" // Obtener el correo del usuario actual
+        val ownerEmail = finca.ownerEmail // Obtener el correo del dueño de la finca
+        val messageToOwner = "Hola, alguien se ha postulado a tu oferta para ${finca.finca}."
+        val messageToApplicant = "Te has postulado exitosamente a la oferta de ${finca.finca}."
+
+        // Agregar notificación para el dueño de la finca
+        addNotification(ownerEmail, messageToOwner)
+
+        // Agregar notificación para el solicitante
+        addNotification(applicantEmail, messageToApplicant)
+
+        Toast.makeText(context, "Te has postulado correctamente.", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun addNotification(userEmail: String, message: String) {
+        val notification = Notification(message = message, timestamp = System.currentTimeMillis())
+        db.collection("notifications")
+            .add(mapOf("userEmail" to userEmail, "message" to notification.message, "timestamp" to notification.timestamp))
+            .addOnSuccessListener {
+                // Notificación agregada correctamente
+            }
+            .addOnFailureListener { e ->
+                e.printStackTrace()
+            }
+    }
 }
+
+
+
+
+
+
 
 
 
